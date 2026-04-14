@@ -1,5 +1,5 @@
-name: animated_borders_example
-description: Example app for animated_borders package.
+name: border_animator_example
+description: Example app for border_animator package.
 publish_to: 'none'
 
 environment:
@@ -8,5 +8,5 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  animated_borders:
+  border_animator:
     path: ../

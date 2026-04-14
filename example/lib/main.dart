@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animated_borders/animated_borders.dart';
+import 'package:border_animator/border_animator.dart';
 
 void main() {
   runApp(const ExampleApp());
