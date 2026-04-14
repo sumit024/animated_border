@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/d056baf6-4e0f-4125-af30-7c25842dd175
+
 # animated_borders
 
 A Flutter widget that renders an animated border segment continuously traversing along container edges. Lightweight, customizable, and optimized for 120fps.
