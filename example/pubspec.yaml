@@ -1,0 +1,12 @@
+name: animated_borders_example
+description: Example app for animated_borders package.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_borders:
+    path: ../
