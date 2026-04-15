@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Added demo GIF to README for better package preview
+* Improved documentation and usage clarity
