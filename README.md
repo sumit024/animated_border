@@ -1,4 +1,4 @@
-https://github.com/user-attachments/assets/d056baf6-4e0f-4125-af30-7c25842dd175
+![Demo](https://raw.githubusercontent.com/sumit024/animated_border/main/demo.gif)
 
 # border_animator
 
