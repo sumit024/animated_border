@@ -39,6 +39,7 @@ class AnimatedBorder extends StatefulWidget {
     this.borderRadius = 12.0,
     this.segmentLengthFactor = 0.3,
     this.direction = BorderDirection.clockwise,
+    this.enabled = true,
   });
 
   /// The widget to display inside the animated border.
@@ -80,6 +81,12 @@ class AnimatedBorder extends StatefulWidget {
   /// Defaults to [BorderDirection.clockwise].
   final BorderDirection direction;
 
+  /// Whether the animated border is shown.
+  ///
+  /// When false, the child is rendered as-is with no border or padding.
+  /// Defaults to true.
+  final bool enabled;
+
   @override
   State<AnimatedBorder> createState() => _AnimatedBorderState();
 }
@@ -91,8 +98,8 @@ class _AnimatedBorderState extends State<AnimatedBorder>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: widget.duration)
-      ..repeat();
+    _controller = AnimationController(vsync: this, duration: widget.duration);
+    if (widget.enabled) _controller.repeat();
   }
 
   @override
@@ -100,7 +107,14 @@ class _AnimatedBorderState extends State<AnimatedBorder>
     super.didUpdateWidget(oldWidget);
     if (widget.duration != oldWidget.duration) {
       _controller.duration = widget.duration;
-      _controller.repeat();
+      if (widget.enabled) _controller.repeat();
+    }
+    if (widget.enabled != oldWidget.enabled) {
+      if (widget.enabled) {
+        _controller.repeat();
+      } else {
+        _controller.stop();
+      }
     }
   }
 
@@ -112,6 +126,8 @@ class _AnimatedBorderState extends State<AnimatedBorder>
 
   @override
   Widget build(BuildContext context) {
+    if (!widget.enabled) return widget.child;
+
     return CustomPaint(
       willChange: true, // Tells the engine not to raster-cache this layer.
       painter: AnimatedBorderPainter(

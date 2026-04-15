@@ -1,6 +1,6 @@
 name: border_animator
 description: "A Flutter widget that renders an animated border continuously traversing along container edges."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/sumit024/animated_border
 
 environment:
